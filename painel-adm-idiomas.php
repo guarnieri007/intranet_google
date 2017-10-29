@@ -11,7 +11,7 @@ $idiomas = buscaIdiomas($conexao);
 ?>
 <table>
   <tr>
-    <th>Delete</th><th>Idioma</th><th>Abreviação</th><th>País</th>
+    <th>Delete</th><th>Idioma</th><th>Abreviação</th>
   </tr>
 
 <?php foreach ($idiomas as $idioma): ?>
@@ -26,7 +26,6 @@ $idiomas = buscaIdiomas($conexao);
     <input name="id_idioma" type="hidden" value="<?= $idioma['id_idioma'] ?>">
     <td><input name="idioma" type="text" value="<?= $idioma['idioma'] ?>"></td>
     <td><input name="abreviacao" type="text" value="<?= $idioma['abreviacao'] ?>"></td>
-    <td><input name="pais" type="text" value="<?= $idioma['pais'] ?>"></td>
     <td><input type="submit" value="Salvar"></td>
     </form>
   </tr>
@@ -38,7 +37,6 @@ $idiomas = buscaIdiomas($conexao);
     <td></td>
     <td><input name="idioma" type="text" value=""></td>
     <td><input name="abreviacao" type="text" value=""></td>
-    <td><input name="pais" type="text" value=""></td>
     <td><input type="submit" value="Salvar"></td>
   </tr>
 </form>

@@ -1,8 +1,10 @@
 <?php include_once("cabecalho.php");
 include_once("banco_login.php");
 include_once("banco-idiomas.php");
+include_once("banco_adm.php");
 
 $idiomas = listaIdiomas($conexao);
+$paises = buscarPaises($conexao);
 
 if (($_SESSION['usuario_logado']) == NULL) {
 ?>
@@ -46,8 +48,8 @@ if (($_SESSION['usuario_logado']) == NULL) {
 
   <label>Onde estou </label>
   <select name="pais">
-    <?php foreach ($idiomas as $idioma): ?>
-    <option value="<?= $idioma['id_idioma'] ?>"> <?= $idioma['pais'] ?></option>
+    <?php foreach ($paises as $pais): ?>
+    <option value="<?= $pais['id_pais'] ?>"> <?= $pais['pais'] ?></option>
     <?php endforeach; ?>
   </select>
 

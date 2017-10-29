@@ -10,11 +10,42 @@ function buscaIdiomas($conexao) {
   return $idiomas;
 }
 
-function adicionarIdiomas($conexao, $idioma, $abreviacao, $pais) {
-  $idioma = mysqli_real_escape_string($conexao, $idioma);
+function buscarPaises($conexao) {
+  $paises = array();
+  $query = "SELECT * FROM paises";
+  $resultado = mysqli_query($conexao, $query);
+  while($pais = mysqli_fetch_assoc($resultado)) {
+    array_push($paises, $pais);
+  }
+  return $paises;
+}
+
+function adicionarPais($conexao, $pais, $abreviacao) {
+  $pais = mysqli_real_escape_string($conexao, $pais);
+  $abreviacao = mysqli_real_escape_string($conexao, $abreviacao);
+  $query = "INSERT into paises (pais, abreviacao) values ('{$pais}', '{$abreviacao}')";
+  $resultado = mysqli_query($conexao, $query);
+  return $resultado;
+}
+
+function editarPais($conexao, $pais, $abreviacao, $id_pais) {
   $abreviacao = mysqli_real_escape_string($conexao, $abreviacao);
   $pais = mysqli_real_escape_string($conexao, $pais);
-  $query = "INSERT into idioma (idioma, abreviacao, pais) values ('{$idioma}', '{$abreviacao}', '{$pais}')";
+  $query = "UPDATE paises set abreviacao = '{$abreviacao}', pais = '{$pais}' WHERE id_pais = '{$id_pais}'";
+  $resultado = mysqli_query($conexao, $query);
+  return $resultado;
+}
+
+function removerPais($conexao, $id_pais) {
+  $query = "DELETE FROM paises WHERE id_pais = '{$id_pais}'";
+  $resultado = mysqli_query($conexao, $query);
+  return $resultado;
+}
+
+function adicionarIdiomas($conexao, $idioma, $abreviacao) {
+  $idioma = mysqli_real_escape_string($conexao, $idioma);
+  $abreviacao = mysqli_real_escape_string($conexao, $abreviacao);
+  $query = "INSERT into idioma (idioma, abreviacao) values ('{$idioma}', '{$abreviacao}')";
   $resultado = mysqli_query($conexao, $query);
   return $resultado;
 }
@@ -22,8 +53,7 @@ function adicionarIdiomas($conexao, $idioma, $abreviacao, $pais) {
 function editaIdiomas($conexao, $idioma, $abreviacao, $pais, $id_idioma) {
   $idioma = mysqli_real_escape_string($conexao, $idioma);
   $abreviacao = mysqli_real_escape_string($conexao, $abreviacao);
-  $pais = mysqli_real_escape_string($conexao, $pais);
-  $query = "UPDATE idioma set idioma = '{$idioma}', abreviacao = '{$abreviacao}', pais = '{$pais}' WHERE id_idioma = '{$id_idioma}'";
+  $query = "UPDATE idioma set idioma = '{$idioma}', abreviacao = '{$abreviacao}' WHERE id_idioma = '{$id_idioma}'";
   $resultado = mysqli_query($conexao, $query);
   return $resultado;
 }

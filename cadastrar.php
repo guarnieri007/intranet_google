@@ -17,11 +17,12 @@ if ((!$_SESSION['usuario_logado']) == NULL) {
 <!--
 Vou incluir aqui o código novo.
 -->
-
+<!--
 <textarea rows="15" cols="50" id="textArea">
 Preencha aqui os dados do cliente utilizando preferencialmente a ferramenta do Danilo nesse link <a href="https://docs.google.com/spreadsheets/d/1Ntjm7WH4M-jlHHAXqqTCjHQcEqt0I2VwQNYsFB3a_Bs/edit#gid=611312487">aqui.</a> e por favor apague este texto para evitar erro.
 </textarea>
 <a onclick="lele()" href="#">Quando terminar de preencher o campo acima, clique aqui para atualizar</a><br><br>
+-->
 <!--
 Terminou aqui o formulário novo.
 -->

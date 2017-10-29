@@ -7,8 +7,8 @@ if(ehAdm()) {
   $abreviacao = $_POST['abreviacao'];
   $pais = $_POST['pais'];
 
-  if(adicionarIdiomas($conexao, $idioma, $abreviacao, $pais)) {
-    $_SESSION["success"] = "Adicionado com sucesso<br>idioma: $idioma ; abreviacao: $abreviacao ; pais: $pais";
+  if(adicionarIdiomas($conexao, $idioma, $abreviacao)) {
+    $_SESSION["success"] = "Adicionado com sucesso<br>idioma: $idioma ; abreviacao: $abreviacao";
     header("Location: painel-adm-idiomas.php");
   }else {
     $msg = mysqli_linuxerror($conexao);

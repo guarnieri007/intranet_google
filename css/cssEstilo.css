@@ -7,9 +7,12 @@ html, head, body {
   padding: 0px;
   background-color: var(--fundocolor);
   color: #000;
+  text-shadow: -1px 0 #b8b5b5, 0 1px #b8b5b5, 1px 0 #b8b5b5, 0 -1px #b8b5b5;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   position: absolute;
+background-color: #ddd7e0;
+
 }
 
 #head {
@@ -24,11 +27,16 @@ html, head, body {
   height: 45px;
   position: absolute;
   text-align: center;
-
 }
 
 .backgroundEscuro {
     background-color: rgba(0, 0, 0, 0.9 );
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #431758, #ad3030, #851212); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #431758, #ad3030, #851212); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #431758, #ad3030, #851212); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #431758, #ad3030, #851212); /* Standard syntax (must be last) */
+    border-bottom: 1px solid #000;
 }
 
 #menu_cabecalho {
@@ -166,7 +174,7 @@ html, head, body {
 .formulario1 ul li {
   display: block;
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 
 .classe1 {
@@ -233,7 +241,7 @@ html, head, body {
   width: 85px;
   height: 85px;
   border-radius: 10px;
-  background-color: #fff;
+    border: 2px #000 solid;
 }
 
 .esconder {
@@ -331,6 +339,9 @@ html, head, body {
   font-size: 1rem;
   margin-left: auto;
   margin-right: auto;
+  font-family: monospace;
+  text-shadow: none;
+  color: #000;
 }
 
 .sub100 * {
@@ -367,8 +378,8 @@ html, head, body {
 #conteudo {
   margin-top: 45px;
   width: 100%;
-  min-height: 100%;
-  background-color: var(--fundocolor);
+  min-height: 70%;
+
 }
 
 #contenedor {
@@ -377,7 +388,7 @@ html, head, body {
   margin-top: 100px;
   width: 90%;
   min-height: 70%;
-  background-color: var(--fundocolor);
+
 
 }
 #contenedor form p {
@@ -390,5 +401,6 @@ html, head, body {
 }
 
 :root {
-  --fundocolor: rgba(255, 255, 17, 0.55);/* igual a #ff1*/
+  --fundocolor: #bc8dc6;
+  /*--fundocolor: rgba(255, 255, 17, 1);*/ /* igual a #ff1*/
 }

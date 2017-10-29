@@ -10,7 +10,9 @@ if (ehAdm()) {
 
   <ul>
     <li><a href="painel-adm-ativar-usuarios.php">Usuários Aguardando ativação</a></li>
-    <li><a href="painel-adm-idiomas.php">Idiomas disponíveis</a></li>
+    <li><a href="painel-adm-idiomas.php">Idiomas</a></li>
+    <li><a href="painel-adm-paises.php">Países</a></li>
+    <li><a href="painel-adm-equipes.php">Equipes</a></li>
   </ul>
 
 <?php
