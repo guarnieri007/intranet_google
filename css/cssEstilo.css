@@ -6,12 +6,12 @@ html, head, body {
   margin: 0px;
   padding: 0px;
   background-color: var(--fundocolor);
-  color: #000;
-  text-shadow: -1px 0 #b8b5b5, 0 1px #b8b5b5, 1px 0 #b8b5b5, 0 -1px #b8b5b5;
+  color: #fff;
+  text-shadow: -1px 0 #000, 0 1px #b8b5b5, 1px 0 #000, 0 -1px #b8b5b5;
   font-family: sans-serif;
   font-size: 16px;
   position: absolute;
-background-color: #ddd7e0;
+background-color: #19002d;
 
 }
 
