@@ -8,7 +8,7 @@ html, head, body {
   background-color: var(--fundocolor);
   color: #fff;
   text-shadow: -1px 0 #000, 0 1px #b8b5b5, 1px 0 #000, 0 -1px #b8b5b5;
-  font-family: sans-serif;
+  font-family: DejaVu Sans Bold, fantasy;
   font-size: 16px;
   position: absolute;
 background-color: #19002d;
@@ -73,7 +73,6 @@ background-color: #19002d;
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 49%;
   padding-bottom: 0px;
   background-color: rgba(255, 255, 255, 0.85);
   box-shadow: 5px 5px 0px #000, -5px -5px 0px #acd;
@@ -109,7 +108,7 @@ background-color: #19002d;
   margin-right: auto;
   margin-top: 50px;
   width:90%;
-  min-height: 100%;
+  min-height: 40%;
 }
 
 .form-cadastro {
@@ -179,6 +178,8 @@ background-color: #19002d;
 
 .classe1 {
   position: relative;
+  padding-left: 4px;
+  border: solid #741d8d 2px;
   width: 20%;
   min-width: 126px;
   height: 20px;
@@ -187,7 +188,7 @@ background-color: #19002d;
 
 .classe2 {
   position: relative;
-  width: 80%;
+  width: 25%;
   height: 20px;
   right: -20%;
   top: -22px;
@@ -199,7 +200,7 @@ background-color: #19002d;
   min-width: 200px;
   margin-left: 0%;
   border-radius: 5px;
-  border: 2px solid #00ff55;
+  border: 2px solid #741d8d;
   padding-left: 5px;
   text-align: left;
 
@@ -231,11 +232,20 @@ background-color: #19002d;
   cursor:pointer;
   color:#fff;
   padding:0;
-  text-decoration:underline;
   font-family:inherit;
   font-size:inherit;
-  text-shadow: 1px 1px 3px #000, -1px -1px 3px #000, 1px -1px 3px #000, -1px 1px 3px #000;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  transition: font-size 0.4s;
 }
+
+.btn-link:hover {
+  color: #e4d19e;
+}
+
+.form-bnt:hover {
+  background-color: #000;
+}
+
 
 .photo {
   width: 85px;
@@ -295,20 +305,24 @@ background-color: #19002d;
 }
 
 .table1 {
-  border: 2px solid #000;
+  border: 3px solid #000;
   width: 100%;
-  background-color: #171;
+  font-size: 16px;
+  background-color: #580073;
 }
 
 .table1 th {
-
-  background-color: #ffc;
+  max-width: 14%;
+  background-color: #000;
   border-left: 2px #000 solid;
   border-right: 2px #000 solid;
+  color: #e4d19e;
+  text-shadow: none;
+
 }
 
 .table1 tr:nth-child(even){
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: #741d8d;
 }
 
 .table1 tr:nth-child(odd){
@@ -321,6 +335,9 @@ background-color: #19002d;
 }
 
 .table1 td{
+  max-width: 14%;
+  width: 9%;
+  height: auto;
 	vertical-align: middle;
 	align-content: center;
   text-align: center;
@@ -357,7 +374,7 @@ background-color: #19002d;
 }
 .sub50 {
   display: inline-block;
-  width: 48%;
+  width: 49%;
   min-height: 600px;
   border: 1px solid #000;
   background-color: rgba(255, 255, 255, 0.9);
@@ -367,8 +384,14 @@ background-color: #19002d;
 .sub50 * {
   margin-left: 10px;
   margin-right: 10px;
+  text-shadow: none;
+  color: #000;
 }
 
+
+.fright {
+  float: right;
+}
 .sub50 h2 {
   text-align: center;
   color: #000;

@@ -59,7 +59,7 @@ $usuarios = listarUsuariosFuncoes($conexao, $_SESSION['permissao']);
 </tr>
 </table>
 </li></ul>
-		  <div id="opcoes" class="contenedor esconder">
+		  <div id="opcoes" class="esconder">
 		  <div class="sub50">
 		  <h2>Tratativas realizadas</h2>
 <form action="#">
@@ -84,7 +84,7 @@ $usuarios = listarUsuariosFuncoes($conexao, $_SESSION['permissao']);
 
 		  </div>
 
-		  <div class="sub50">
+		  <div class="sub50 fright">
 
 		  <h2>Tratativas pendentes</h2>
 <form action="#">
