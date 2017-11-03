@@ -33,7 +33,7 @@ foreach($clientes as $cliente) :
   <td><?=$cliente['webmaster_telefone'] ?></td>
   <td><?=$cliente['sales_rep_email'] ?></td>
 
-  <td class="form-bnt">
+  <td class="form-b">
    <form action="clienteDelete.php" method="post">
      <input name="id_cliente" type="hidden" value="<?= $cliente['cliente_id']; ?>">
      <button type="submit" class="btn-link">Delete</button>

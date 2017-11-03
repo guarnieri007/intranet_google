@@ -30,7 +30,7 @@ function generarCorreo() {
 	var feitorenderjs ="Evitar el bloqueo de JavaScript en la parte de arriba";
 	var feitorendercss ="Evitar el bloqueo de CSS en la parte de arriba";
 	var feitoredirects ="Quitar redirecionamento";
-    var feitogzip ="Ativar la compresión con Gzip";
+    var feitogzip ="Activar la compresión con Gzip";
     var feitokeepAlive ="Activar Keep Alive";
     var feitopreconnect ="Utilizar preConnect";
     var feitocaching ="Activar cache y especificar el tiempo de expiración";
@@ -44,10 +44,10 @@ function generarCorreo() {
     var feitolazyScripts ="Utilizar Lazy Scripts";
     var feitocdn ="Utilizar CDN";
 
-	var pendrenderjs    ="Evitar el bloqueo de JavaScript en la parte de arriba";
-	var pendrendercss   ="Evitar el bloqueo de CSS en la parte de arriba";
-	var pendredirects   ="Quitar redirecionamento";
-    var pendgzip        ="Ativar la compressión con Gzip";
+	var pendrenderjs    ="Evitar el bloqueo de JavaScript";
+	var pendrendercss   ="Evitar el bloqueo de CSS";
+	var pendredirects   ="Quitar redirecionamentos";
+    var pendgzip        ="Activar compressión con Gzip";
     var pendkeepAlive   ="Activar Keep Alive";
     var pendpreconnect  ="Utilizar preConnect";
     var pendcaching     ="Activar cache y especificar el tiempo de expiración";
@@ -105,9 +105,10 @@ function generarCorreo() {
 	var horario = document.getElementById("horario").value;
 	var tipo = document.getElementById("tipo").value;
 	var mi = document.getElementById("mi").value;
+	var mes = fecha.slice(5, 7);
 	var dia = diaDeLaSemana(fecha);
+	var date = mesEscrito(mes);
 	var diaNum = fecha.slice(8);
-	var date = mesEscrito(fecha);
 	var fechaCompleta = (diaNum + " de " + date);
 	var terminos = '<a href="https://docs.google.com/forms/d/e/1FAIpQLScbHb_eMyNJXEV3CkMBz8rlOfpe_fOOkauCsjWRA1XpZDOOZA/viewform">este enlace</a>';
 	if (url == "" || nombreDesarrollador == "" || correo == "" || telefono == "" || fecha == "" || horario == "" || tipo == "") {

@@ -6,27 +6,28 @@ $id = $_POST['cliente'];
 $cliente = pesquisarCliente($conexao, $id);
 ?>
 
-<form class="formulario1" action="clienteEditar.php" method="post">
+<form class="formulario1" action="editar-cliente.php" method="post">
+  <input type="hidden" name="id_cliente" id="url" value="<?=$cliente['cliente_id'] ?>">
 <ul><li>URL do Site:</li>
-  <li><input type="text" name="url" id="url" value="<?=$cliente['site'] ?>" placeholder="www.cognizant.com"></li>
+  <li><input type="text" name="site" id="url" value="<?=$cliente['site'] ?>" placeholder="www.cognizant.com"></li>
 </ul>
 <ul><li>Nome do Webmaster:</li>
-  <li><input type="text" name="nombreDesarrollador" id="nombreDesarrollador" value="<?=$cliente['webmaster_nome'] ?>" placeholder="Nombre"></li>
+  <li><input type="text" name="webmaster_nome" id="nombreDesarrollador" value="<?=$cliente['webmaster_nome'] ?>" placeholder="Nombre"></li>
 </ul>
 <ul><li>Telefone de contato (webmaster):</li>
-  <li><input type="text" name="telefono" id="telefono" value="<?=$cliente['webmaster_telefone'] ?>" placeholder="+54 34 15248521"></li>
+  <li><input type="text" name="webmaster_telefone" id="telefono" value="<?=$cliente['webmaster_telefone'] ?>" placeholder="+54 34 15248521"></li>
 </ul>
   <ul><li>Email do webmaster:</li>
-  <li><input type="text" name="correo" id="correo" value="<?=$cliente['webmaster_email'] ?>" placeholder="ejemplo@correo.com.ar"></li>
+  <li><input type="text" name="webmaster_email" id="correo" value="<?=$cliente['webmaster_email'] ?>" placeholder="ejemplo@correo.com.ar"></li>
 </ul>
   <ul><li>Email do sales rep e quem mais for necessário:</li>
-  <li><input type="text" name="correoAlguien" id="correoAlguien" value="<?=$cliente['sales_rep_email'] ?>" placeholder="otroejemplo@correo.com.ar"></li>
+  <li><input type="text" name="sales_rep_email" id="correoAlguien" value="<?=$cliente['sales_rep_email'] ?>" placeholder="otroejemplo@correo.com.ar"></li>
 </ul>
   <ul><li>Data da reunião:</li>
-  <li><input type="date" name="fecha" id="fecha" value="<?=$cliente['agendamento'] ?>" placeholder="1989-11-08"></li>
+  <li><input type="date" name="agendamento" id="fecha" value="<?=$cliente['agendamento'] ?>" placeholder="1989-11-08"></li>
 </ul>
   <ul><li>horário da reunião:</li>
-  <li><input type="time" name="horario" id="horario" value="<?=$cliente['horario_agen'] ?>" placeholder="05:30 AM"></li>
+  <li><input type="time" name="horario_agen" id="horario" value="<?=$cliente['horario_agen'] ?>" placeholder="05:30 AM"></li>
 </ul>
 
 <ul><li>
@@ -58,6 +59,9 @@ $usuarios = listarUsuariosFuncoes($conexao, $_SESSION['permissao']);
 </td>
 </tr>
 </table>
+
+<input type="submit" value="Guardar Alterações" class="botao1">
+</form>
 </li></ul>
 		  <div id="opcoes" class="esconder">
 		  <div class="sub50">
@@ -113,9 +117,7 @@ $usuarios = listarUsuariosFuncoes($conexao, $_SESSION['permissao']);
 		  </div>
 
 
-  <input type="button" value="Generar" id="generar" class="botao1">
-
-</form>
+<input type="button" value="Generar" id="generar" class="botao1">
 <div id="erro" class="esconder">Tenemos un error, se hace necesario llenar todo el formulario.</div>
 </div>
 <br>

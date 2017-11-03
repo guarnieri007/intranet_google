@@ -43,3 +43,16 @@ function removerCliente($conexao, $id) {
 
   return $resultado;
 }
+
+function editarcliente($cliente_id, $conexao, $webmaster_nome, $webmaster_email, $webmaster_telefone, $site, $sales_rep_email, $agendamento, $horario_agen) {
+
+  $webmaster_nome = mysqli_real_escape_string($conexao, $webmaster_nome);
+  $webmaster_email = mysqli_real_escape_string($conexao, $webmaster_email);
+  $webmaster_telefone = mysqli_real_escape_string($conexao, $webmaster_telefone);
+  $site = mysqli_real_escape_string($conexao, $site);
+  $sales_rep_email = mysqli_real_escape_string($conexao, $sales_rep_email);
+  $agendamento = mysqli_real_escape_string($conexao, $agendamento);
+  $horario_agen = mysqli_real_escape_string($conexao, $horario_agen);
+  $query = "UPDATE clientes set webmaster_nome = '{$webmaster_nome}', webmaster_email = '{$webmaster_email}', webmaster_telefone = '{$webmaster_telefone}', site = '{$site}', sales_rep_email = '{$sales_rep_email}', agendamento = '{$agendamento}', horario_agen = '{$horario_agen}' WHERE cliente_id = {$cliente_id}";
+  return mysqli_query($conexao, $query);
+}
