@@ -7,7 +7,7 @@ $cliente = pesquisarCliente($conexao, $id);
 ?>
 
 <form class="formulario1" action="editar-cliente.php" method="post">
-  <input type="hidden" name="id_cliente" id="url" value="<?=$cliente['cliente_id'] ?>">
+  <input type="hidden" name="id_cliente" value="<?=$cliente['cliente_id'] ?>">
 <ul><li>URL do Site:</li>
   <li><input type="text" name="site" id="url" value="<?=$cliente['site'] ?>" placeholder="www.cognizant.com"></li>
 </ul>
