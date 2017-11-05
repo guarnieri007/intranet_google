@@ -74,7 +74,7 @@ background-color: #19002d;
   top: 0px;
   left: 0px;
   padding-bottom: 0px;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 5px 5px 0px #000, -5px -5px 0px #acd;
 }
 
@@ -118,7 +118,7 @@ background-color: #19002d;
   right: 0px;
   font-size: 0.95rem;
   font-family: monospace;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 5px 5px 0px #000, -5px -5px 0px #acd;
 }
 
@@ -226,6 +226,10 @@ background-color: #19002d;
 }
 
 .btn-link{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
   border:none;
   outline:none;
   background:none;
@@ -235,15 +239,40 @@ background-color: #19002d;
   font-family:inherit;
   font-size:inherit;
   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-  transition: font-size 0.4s;
+  transition: font-size 1.2s;
 }
 
 .btn-link:hover {
   color: #e4d19e;
+  font-size: 120%;
+}
+
+.form-bnt {
+  position: absolute;
+  width: 40ch;
+  height: inherit;
+  transition: background-color 0.6s;
+}
+
+.form-bnt input {
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
 }
 
 .form-bnt:hover {
   background-color: #000;
+
+}
+
+.centralizando-form {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0em;
+
+  display: block;
 }
 
 
@@ -318,7 +347,6 @@ background-color: #19002d;
   border-right: 2px #000 solid;
   color: #e4d19e;
   text-shadow: none;
-
 }
 
 .table1 tr:nth-child(even){
@@ -326,7 +354,7 @@ background-color: #19002d;
 }
 
 .table1 tr:nth-child(odd){
-	background-color: rgba(102, 223, 241, 0.73);
+	background-color: rgba(102, 223, 241, 0.4);
 }
 
 #contenedor > table > tbody > tr > td > form {
@@ -336,7 +364,6 @@ background-color: #19002d;
 
 .table1 td{
   max-width: 14%;
-  width: 9%;
   height: auto;
 	vertical-align: middle;
 	align-content: center;
@@ -344,9 +371,15 @@ background-color: #19002d;
   border-radius: 5px;
   margin-left:auto;
   margin-right:auto;
-  color: #fff;
-  text-shadow: 1px 1px 3px #000, -1px -1px 3px #000, 1px -1px 3px #000, -1px 1px 3px #000;
+  color: rgba(255,255,255, 0.95);
+  text-shadow: 1px 1px 1px #000, -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000;
+  position: relative;
 }
+
+.table1 tr {
+  height: 3.5rem;
+}
+
 .sub100 {
   display: block;
   width: 98%;
