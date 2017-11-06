@@ -28,8 +28,8 @@ foreach($clientes as $cliente) :
  </form>
 </td>
 
-  <td><?=$cliente['agendamento'] ?></td>
-  <td><?=$cliente['horario_agen'] ?></td>
+  <td class="data-cliente"><?=$cliente['agendamento'] ?></td>
+  <td class="hora-cliente"><?=$cliente['horario_agen'] ?></td>
   <td><?=$cliente['webmaster_telefone'] ?></td>
   <td><?=$cliente['sales_rep_email'] ?></td>
 
