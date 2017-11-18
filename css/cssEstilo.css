@@ -69,13 +69,36 @@ background-color: #19002d;
   margin-left: 20px;
 }
 
-.formulario {
+.formularios {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  padding-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width:100%;
+  min-height: 70%;
+  height: auto;
+  background-image: url("/img/forest-backgroundmin.png");
+  background-size: 100% 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.formulario {
+  width: 70%;
+  min-width: 360px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7.5%;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 5px 5px 0px #000, -5px -5px 0px #acd;
+}
+
+.formulario p {
+  color: #000;
+  text-shadow: none;
+  text-align: center;
+  font-size: 0.9rem;
+  padding-bottom: 2rem;
 }
 
 .formulario form label {
@@ -83,9 +106,8 @@ background-color: #19002d;
   margin-left: 15px;
   vertical-align: middle;
   height: 20px;
-  padding: 8px 0px 5px 0px;
-  width: 26%;
-  padding-left: 10px;
+  padding: 8px 0px 5px 10px;
+  width: calc(20% - 10px);
   margin-bottom: 0px;
   background-color: #aab;
   color: #fff;
@@ -98,21 +120,47 @@ background-color: #19002d;
   display: inline-block;
   margin-left: 15px;
   margin-bottom: 20px;
+  padding: 0px 0px 0px 10px;
   height: 33px;
-  width: 60%;
+  width: calc(80% - 55px);
 }
 
-.formularios {
+.formulario form input:last-of-type {
+  width: calc(100% - 35px);
+  cursor: pointer;
+  background-color: rgba(3, 33, 164, 0.45);
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #431758, #ad3030, #851212); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #431758, #ad3030, #851212); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #431758, #ad3030, #851212); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #431758, #ad3030, #851212); /* Standard syntax (must be last) */
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.formulario form input:last-of-type:hover {
+  background-color: rgba(3, 33, 164, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.form-cadastro-h2 {
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  width:90%;
-  min-height: 40%;
+  top: 15px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 2px;
+  margin-bottom: 35px;
+  font-size: 1.1rem;
+  margin-left: 15px;
+  padding-right: 0px;
+  color: #fff;
+  width: calc(100% - 45px);
+  height: 25px;
+  background-color: #acd;
+  text-shadow: 2px 2px 0px #000, 0px 0px 5px #000;
 }
 
 .form-cadastro {
-  width: 49%;
+  width: calc(50% -10px);
   position: absolute;
   top: 0px;
   right: 0px;
@@ -155,21 +203,6 @@ background-color: #19002d;
   font-size: 0.9rem;
 }
 
-.form-cadastro-h2 {
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 2px;
-  margin-bottom: 25px;
-  font-size: 1.1rem;
-  margin-left: 15px;
-  padding-right: 0px;
-  color: #fff;
-  width: 90%;
-  height: 25px;
-  background-color: #acd;
-  text-shadow: 2px 2px 0px #000, 0px 0px 5px #000;
-}
-
 .formulario1 ul li {
   display: block;
   text-decoration: none;
@@ -204,10 +237,6 @@ background-color: #19002d;
   padding-left: 5px;
   text-align: left;
 
-}
-
-.botao {
-  cursor: pointer;
 }
 
 #menu_cabecalho ul li: hover {
@@ -268,13 +297,7 @@ background-color: #19002d;
 
 .data-cliente {
   position: absolute;
-  width: 11ch;
-  height: inherit;
-  transition: background-color 0.6s;
-}
-.hora-cliente {
-  position: absolute;
-  width: 9ch;
+  width: 0ch;
   height: inherit;
   transition: background-color 0.6s;
 }
@@ -350,13 +373,16 @@ background-color: #19002d;
 .table1 {
   border: 3px solid #000;
   width: 100%;
-  font-size: 15.7px;
+  font-size: 16px;
   background-color: #580073;
-  margin-bottom: 10px;
 }
 
 .table1 th {
+  max-width: 14%;
   background-color: #000;
+  border-left: 2px #000 solid;
+  border-right: 2px #000 solid;
+  color: #e4d19e;
   text-shadow: none;
 }
 
@@ -449,11 +475,10 @@ background-color: #19002d;
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
-  width: 90%;
+  width: 100%;
   min-height: 70%;
-
-
 }
+
 #contenedor form p {
   width: 100%;
 }
