@@ -77,19 +77,20 @@ background-color: #19002d;
   width:100%;
   min-height: 70%;
   height: auto;
+  background-blend-mode: color;
   background-image: url("/img/forest-backgroundmin.png");
   background-size: 100% 100%;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .formulario {
-  width: 70%;
+  width: 85%;
   min-width: 360px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-top: 7.5%;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 5px 5px 0px #000, -5px -5px 0px #acd;
 }
 
@@ -140,6 +141,7 @@ background-color: #19002d;
 .formulario form input:last-of-type:hover {
   background-color: rgba(3, 33, 164, 1);
   color: rgba(255, 255, 255, 1);
+  box-shadow: 2px 2px 2px 1px #000;
 }
 
 .form-cadastro-h2 {
@@ -486,6 +488,24 @@ background-color: #19002d;
   border: 2px solid #00ff55;
   align-content: stretch;
   width: auto;
+}
+
+#contenedor > ul {
+  text-decoration: none;
+  list-style-type: none;
+  padding: 0px;
+  padding-left: 60px;
+}
+
+#contenedor > ul > li {
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+#contenedor >ul > li > a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.15rem;
 }
 
 :root {
