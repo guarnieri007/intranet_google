@@ -1,33 +1,41 @@
 <?php  include_once("cabecalho.php");
       include_once("bClientes.php");
       include_once("banco_login.php");
+      include_once("class/cliente.php");
 
 $id = $_POST['cliente'];
-$cliente = pesquisarCliente($conexao, $id);
+$pesquisa = pesquisarCliente($conexao, $id);
+
+
+$cliente = new cliente($pesquisa["webmaster_nome"], $pesquisa["webmaster_email"], $pesquisa["webmaster_telefone"], $pesquisa["site"], $pesquisa["agendamento"], $pesquisa["horario_agen"], $pesquisa["cli_mercado"], $pesquisa["cli_ms3"]);
+$cliente->setSales_Rep_Email($pesquisa['sales_rep_email']);
+$cliente->setCliente_Id($id);
 ?>
 
 <form class="formulario1" action="editar-cliente.php" method="post">
-  <input type="hidden" name="id_cliente" value="<?=$cliente['cliente_id'] ?>">
+  <input type="hidden" name="id_cliente" value="<?=$cliente->getCliente_Id() ?>">
+  <input type="hidden" name="operador" value="<?=$cliente->getOperador() ?>">
+  <input type="hidden" name="mercado" value="<?=$cliente->getMercado() ?>">
 <ul><li>URL do Site:</li>
-  <li><input type="text" name="site" id="url" value="<?=$cliente['site'] ?>" placeholder="www.cognizant.com"></li>
+  <li><input type="text" name="site" id="url" value="<?=$cliente->getSite() ?>" placeholder="www.cognizant.com"></li>
 </ul>
 <ul><li>Nome do Webmaster:</li>
-  <li><input type="text" name="webmaster_nome" id="nombreDesarrollador" value="<?=$cliente['webmaster_nome'] ?>" placeholder="Nombre"></li>
+  <li><input type="text" name="webmaster_nome" id="nombreDesarrollador" value="<?= $cliente->getWebmaster_Nome() ?>" placeholder="Nombre"></li>
 </ul>
 <ul><li>Telefone de contato (webmaster):</li>
-  <li><input type="text" name="webmaster_telefone" id="telefono" value="<?=$cliente['webmaster_telefone'] ?>" placeholder="+54 34 15248521"></li>
+  <li><input type="text" name="webmaster_telefone" id="telefono" value="<?= $cliente->getWebmaster_Telefone() ?>" placeholder="+54 34 15248521"></li>
 </ul>
   <ul><li>Email do webmaster:</li>
-  <li><input type="text" name="webmaster_email" id="correo" value="<?=$cliente['webmaster_email'] ?>" placeholder="ejemplo@correo.com.ar"></li>
+  <li><input type="text" name="webmaster_email" id="correo" value="<?=$cliente->getWebmaster_Email() ?>" placeholder="ejemplo@correo.com.ar"></li>
 </ul>
   <ul><li>Email do sales rep e quem mais for necessário:</li>
-  <li><input type="text" name="sales_rep_email" id="correoAlguien" value="<?=$cliente['sales_rep_email'] ?>" placeholder="otroejemplo@correo.com.ar"></li>
+  <li><input type="text" name="sales_rep_email" id="correoAlguien" value="<?=$cliente->getSales_Rep_Email() ?>" placeholder="otroejemplo@correo.com.ar"></li>
 </ul>
   <ul><li>Data da reunião:</li>
-  <li><input type="date" name="agendamento" id="fecha" value="<?=$cliente['agendamento'] ?>" placeholder="1989-11-08"></li>
+  <li><input type="date" name="agendamento" id="fecha" value="<?=$cliente->getAgendamento() ?>" placeholder="1989-11-08"></li>
 </ul>
   <ul><li>horário da reunião:</li>
-  <li><input type="time" name="horario_agen" id="horario" value="<?=$cliente['horario_agen'] ?>" placeholder="05:30 AM"></li>
+  <li><input type="time" name="horario_agen" id="horario" value="<?=$cliente->getHorario_Agen() ?>" placeholder="05:30 AM"></li>
 </ul>
 
 <ul><li>

@@ -1,6 +1,7 @@
 <?php
 include_once("conexao.php");
 include_once("banco_login.php");
+include_once("class/cliente.php");
 if(isset($_SESSION["usuario_logado"])) {
 function listarClientes($conexao) {
   $clientes = array();
@@ -11,12 +12,27 @@ function listarClientes($conexao) {
   return $clientes;
 }
 
-function listarMeusClientes($conexao) {
+function listarMeusClientes($conexao, $me) {
   $clientes = array();
-  $eu = $_SESSION["id_usuario"];
+  $eu = $me;
   $query = "SELECT * FROM clientes WHERE cli_ms3 = {$eu}";
   $resultado = mysqli_query($conexao, $query);
   while($cliente = mysqli_fetch_assoc($resultado)) {
+
+    $webmaster_nome = $cliente['webmaster_nome'];
+    $webmaster_email = $cliente['webmaster_email'];
+    $webmaster_telefone = $cliente['webmaster_telefone'];
+    $site = $cliente['site'];
+    $sales_rep_email = $cliente['sales_rep_email'];
+    $agendamento = $cliente['agendamento'];
+    $horario_agen = $cliente['horario_agen'];
+    $mercado = $cliente['mercado'];
+    $operador = $cliente['ms3'];
+    $cliente_id = $cliente['cliente_id'];
+    $cliente = new Cliente($webmaster_nome, $webmaster_email, $webmaster_telefone, $site, $agendamento, $horario_agen, $mercado, $operador);
+    $cliente->setCliente_Id($cliente_id);
+    $cliente->setSales_Rep_email($sales_rep_email);
+
     array_push($clientes, $cliente);
   }
   return $clientes;
@@ -29,13 +45,6 @@ function pesquisarCliente($conexao, $id) {
   return mysqli_fetch_assoc($cliente);
 }
 
-}/*fim da chave que valida se o usuário está ativo e logado no sistema*/
-else {
-  $_SESSION["danger"] = "Faça login para ter acesso";
-  header("Location: index.php");
-  die();
-}
-
 function removerCliente($conexao, $id) {
   $id = mysqli_real_escape_string($conexao, $id);
   $query = "DELETE FROM clientes WHERE cliente_id = '{$id}'";
@@ -44,15 +53,23 @@ function removerCliente($conexao, $id) {
   return $resultado;
 }
 
-function editarcliente($cliente_id, $conexao, $webmaster_nome, $webmaster_email, $webmaster_telefone, $site, $sales_rep_email, $agendamento, $horario_agen) {
+function editarcliente($conexao, $cliente) {
 
-  $webmaster_nome = mysqli_real_escape_string($conexao, $webmaster_nome);
-  $webmaster_email = mysqli_real_escape_string($conexao, $webmaster_email);
-  $webmaster_telefone = mysqli_real_escape_string($conexao, $webmaster_telefone);
-  $site = mysqli_real_escape_string($conexao, $site);
-  $sales_rep_email = mysqli_real_escape_string($conexao, $sales_rep_email);
-  $agendamento = mysqli_real_escape_string($conexao, $agendamento);
-  $horario_agen = mysqli_real_escape_string($conexao, $horario_agen);
-  $query = "UPDATE clientes set webmaster_nome = '{$webmaster_nome}', webmaster_email = '{$webmaster_email}', webmaster_telefone = '{$webmaster_telefone}', site = '{$site}', sales_rep_email = '{$sales_rep_email}', agendamento = '{$agendamento}', horario_agen = '{$horario_agen}' WHERE cliente_id = {$cliente_id}";
+  $cliente->setWebmaster_Nome(mysqli_real_escape_string($conexao, $cliente->getWebmaster_Nome()));
+  $cliente->setWebmaster_Email(mysqli_real_escape_string($conexao, $cliente->getWebmaster_Email()));
+  $cliente->setWebmaster_Telefone(mysqli_real_escape_string($conexao, $cliente->getWebmaster_Telefone()));
+  $cliente->setSite(mysqli_real_escape_string($conexao, $cliente->getSite()));
+  $cliente->setSales_Rep_Email(mysqli_real_escape_string($conexao, $cliente->getSales_Rep_Email()));
+  $cliente->setAgendamento(mysqli_real_escape_string($conexao, $cliente->getAgendamento()));
+  $cliente->setHorario_Agen(mysqli_real_escape_string($conexao, $cliente->getHorario_Agen()));
+  $query = "UPDATE clientes set webmaster_nome = '{$cliente->getWebmaster_Nome()}', webmaster_email = '{$cliente->getWebmaster_Email()}', webmaster_telefone = '{$cliente->getWebmaster_Telefone()}', site = '{$cliente->getSite()}', sales_rep_email = '{$cliente->getSales_Rep_Email()}', agendamento = '{$cliente->getAgendamento()}', horario_agen = '{$cliente->getHorario_Agen()}' WHERE cliente_id = {$cliente->getCliente_Id()}";
   return mysqli_query($conexao, $query);
+
+}
+
+}/*fim da chave que valida se o usuário está ativo e logado no sistema*/
+else {
+  $_SESSION["danger"] = "Faça login para ter acesso";
+  header("Location: index.php");
+  die();
 }

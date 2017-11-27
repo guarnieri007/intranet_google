@@ -1,5 +1,7 @@
-<?php  include_once("cabecalho.php");
+<?php
+include_once("cabecalho.php");
 include_once("bClientes.php");
+include_once("class/cliente.php");
 ?>
 
 <h1>Meus clientes</h1>
@@ -16,26 +18,26 @@ include_once("bClientes.php");
 </tr>
 
 <?php
-$clientes = listarMeusClientes($conexao);
+$clientes = listarMeusClientes($conexao, $_SESSION["id_usuario"]);
 foreach($clientes as $cliente) :
 ?>
 <tr>
-<td><?= $cliente['webmaster_nome'] ?></td>
+<td><?= $cliente->getWebmaster_Nome() ?></td>
 <td class="form-bnt">
  <form action="cliente.php" method="post" class="centralizando-form">
-   <input name="cliente" type="hidden" value="<?= $cliente['cliente_id']; ?>">
-   <button type="submit" class="btn-link"><?=$cliente['site'] ?></button>
+   <input name="cliente" type="hidden" value="<?= $cliente->getCliente_Id() ?>">
+   <button type="submit" class="btn-link"><?=$cliente->getSite() ?></button>
  </form>
 </td>
 
-  <td class="data-cliente"><?=$cliente['agendamento'] ?></td>
-  <td class="hora-cliente"><?=$cliente['horario_agen'] ?></td>
-  <td><?=$cliente['webmaster_telefone'] ?></td>
-  <td><?=$cliente['sales_rep_email'] ?></td>
+  <td><?=$cliente->getAgendamento() ?></td>
+  <td><?=$cliente->getHorario_Agen() ?></td>
+  <td><?=$cliente->getWebmaster_Telefone() ?></td>
+  <td><?=$cliente->getSales_Rep_Email() ?></td>
 
   <td>
    <form action="clienteDelete.php" method="post" class="centralizando-form">
-     <input name="id_cliente" type="hidden" value="<?= $cliente['cliente_id']; ?>">
+     <input name="id_cliente" type="hidden" value="<?= $cliente->getCliente_Id(); ?>">
      <button type="submit" class="btn-link">Delete</button>
    </form>
   </td>
