@@ -75,22 +75,22 @@ $usuarios = listarUsuariosFuncoes($conexao, $_SESSION['permissao']);
 		  <div class="sub50">
 		  <h2>Tratativas realizadas</h2>
 <form action="#">
-<p><input type="checkbox" id="renderjs"    name="renderjs" value="renderjs">      <label for="renderjs"   > Render Blocking JS                   </label>    </p>
-<p><input type="checkbox" id="rendercss"   name="rendercss" value="rendercss">    <label for="rendercss"  > Render Blocking CSS                   </label>    </p>
-<p><input type="checkbox" id="redirects"   name="redirects" value="redirects">    <label for="redirects"  > Evitar redirecionamento de páginas   </label>    </p>
-<p><input type="checkbox" id="gzip"        name="gzip" value="gzip">              <label for="gzip"       > Ativar compressão Gzip               </label>    </p>
-<p><input type="checkbox" id="keepAlive"   name="keepAlive" value="keepAlive">    <label for="keepAlive"  > Ativar Keep Alive                    </label>    </p>
-<p><input type="checkbox" id="preconnect"  name="preconnect" value="preconnect">  <label for="preconnect" > Utilizar Preconnect                  </label>    </p>
-<p><input type="checkbox" id="caching"     name="caching" value="caching">        <label for="caching"    > Ativar caching                       </label>    </p>
-<p><input type="checkbox" id="imagens"     name="imagens" value="imagens">        <label for="imagens"    > Otimizar imagens                     </label>    </p>
-<p><input type="checkbox" id="imagensdup"  name="imagensdup" value="imagensdup">  <label for="imagensdup" > Remover imagens duplicadas           </label>    </p>
-<p><input type="checkbox" id="sprites"     name="sprites" value="sprites">        <label for="sprites"    > Combinar imagens em Sprites CSS      </label>    </p>
-<p><input type="checkbox" id="minicss"     name="minicss" value="minicss">        <label for="minicss"    > Minificar Arquivos CSS               </label>    </p>
-<p><input type="checkbox" id="minijs"      name="minijs" value="minijs">          <label for="minijs"     > Minificar Arquivos JS                </label>    </p>
-<p><input type="checkbox" id="minihtml"    name="minihtml" value="minihtml">      <label for="minihtml"   > Minificar Arquivos html              </label>    </p>
-<p><input type="checkbox" id="conteudovis" name="conteudovis" value="conteudovis"><label for="conteudovis"> Priorizar conteúdo visível           </label>    </p>
-<p><input type="checkbox" id="lazyScripts" name="lazyScripts" value="lazyScripts"><label for="lazyScripts"> Utilizar lazyScripts                 </label>    </p>
-<p><input type="checkbox" id="cdn"         name="cdn" value="cdn">                <label for="cdn"        > Utilizar CDN                         </label>    </p>
+<p><label for="renderjs"   ><input type="checkbox" id="renderjs"    name="renderjs" value="renderjs">       Render Blocking JS                   </label>    </p>
+<p><label for="rendercss"  ><input type="checkbox" id="rendercss"   name="rendercss" value="rendercss">     Render Blocking CSS                   </label>    </p>
+<p><label for="redirects"  ><input type="checkbox" id="redirects"   name="redirects" value="redirects">     Evitar redirecionamento de páginas   </label>    </p>
+<p><label for="gzip"       ><input type="checkbox" id="gzip"        name="gzip" value="gzip">               Ativar compressão Gzip               </label>    </p>
+<p><label for="keepAlive"  ><input type="checkbox" id="keepAlive"   name="keepAlive" value="keepAlive">     Ativar Keep Alive                    </label>    </p>
+<p><label for="preconnect" ><input type="checkbox" id="preconnect"  name="preconnect" value="preconnect">   Utilizar Preconnect                  </label>    </p>
+<p><label for="caching"    ><input type="checkbox" id="caching"     name="caching" value="caching">         Ativar caching                       </label>    </p>
+<p><label for="imagens"    ><input type="checkbox" id="imagens"     name="imagens" value="imagens">         Otimizar imagens                     </label>    </p>
+<p><label for="imagensdup" ><input type="checkbox" id="imagensdup"  name="imagensdup" value="imagensdup">   Remover imagens duplicadas           </label>    </p>
+<p><label for="sprites"    ><input type="checkbox" id="sprites"     name="sprites" value="sprites">         Combinar imagens em Sprites CSS      </label>    </p>
+<p><label for="minicss"    ><input type="checkbox" id="minicss"     name="minicss" value="minicss">         Minificar Arquivos CSS               </label>    </p>
+<p><label for="minijs"     ><input type="checkbox" id="minijs"      name="minijs" value="minijs">           Minificar Arquivos JS                </label>    </p>
+<p><label for="minihtml"   ><input type="checkbox" id="minihtml"    name="minihtml" value="minihtml">       Minificar Arquivos html              </label>    </p>
+<p><label for="conteudovis"><input type="checkbox" id="conteudovis" name="conteudovis" value="conteudovis"> Priorizar conteúdo visível           </label>    </p>
+<p><label for="lazyScripts"><input type="checkbox" id="lazyScripts" name="lazyScripts" value="lazyScripts"> Utilizar lazyScripts                 </label>    </p>
+<p><label for="cdn"        ><input type="checkbox" id="cdn"         name="cdn" value="cdn">                 Utilizar CDN                         </label>    </p>
 
 </form>
 
@@ -100,22 +100,22 @@ $usuarios = listarUsuariosFuncoes($conexao, $_SESSION['permissao']);
 
 		  <h2>Tratativas pendentes</h2>
 <form action="#">
-<p><input type="checkbox" id="pendrenderjs"    name="pendrenderjs"   value="1"><label for="pendrenderjs"   > Render Blocking JS                  </label>    </p>
-<p><input type="checkbox" id="pendrendercss"   name="pendrendercss"  value="1"><label for="pendrendercss"  > Render Blocking CSS                 </label>    </p>
-<p><input type="checkbox" id="pendredirects"   name="pendredirects"  value="1"><label for="pendredirects"  > Evitar redirecionamento de páginas  </label>    </p>
-<p><input type="checkbox" id="pendgzip"        name="pendgzip"       value="1"><label for="pendgzip"       > Ativar compressão Gzip              </label>    </p>
-<p><input type="checkbox" id="pendkeepAlive"   name="pendkeepAlive"  value="1"><label for="pendkeepAlive"  > Ativar Keep Alive                   </label>    </p>
-<p><input type="checkbox" id="pendpreconnect"  name="pendpreconnect" value="1"><label for="pendpreconnect" > Utilizar Preconnect                 </label>    </p>
-<p><input type="checkbox" id="pendcaching"     name="pendcaching"    value="1"><label for="pendcaching"    > Ativar caching                      </label>    </p>
-<p><input type="checkbox" id="pendimagens"     name="pendimagens"    value="1"><label for="pendimagens"    > Otimizar imagens                    </label>    </p>
-<p><input type="checkbox" id="pendimagensdup"  name="pendimagensdup" value="1"><label for="pendimagensdup" > Remover imagens duplicadas          </label>    </p>
-<p><input type="checkbox" id="pendsprites"     name="pendsprites"    value="1"><label for="pendsprites"    > Combinar imagens em Sprites CSS     </label>    </p>
-<p><input type="checkbox" id="pendminicss"     name="pendminicss"    value="1"><label for="pendminicss"    > Minificar Arquivos CSS              </label>    </p>
-<p><input type="checkbox" id="pendminijs"      name="pendminijs"     value="1"><label for="pendminijs"     > Minificar Arquivos JS               </label>    </p>
-<p><input type="checkbox" id="pendminihtml"    name="pendminihtml"   value="1"><label for="pendminihtml"   > Minificar Arquivos html             </label>    </p>
-<p><input type="checkbox" id="pendconteudovis" name="pendconteudovis"value="1"><label for="pendconteudovis"> Priorizar conteúdo visível          </label>    </p>
-<p><input type="checkbox" id="pendlazyScripts" name="pendlazyScripts"value="1"><label for="pendlazyScripts"> Utilizar lazyScripts                </label>    </p>
-<p><input type="checkbox" id="pendcdn"         name="pendcdn"        value="1"><label for="pendcdn"        > Utilizar CDN                        </label>    </p>
+<p><label for="pendrenderjs"   > <input type="checkbox" id="pendrenderjs"    name="pendrenderjs"   value="1">Render Blocking JS                  </label>    </p>
+<p><label for="pendrendercss"  > <input type="checkbox" id="pendrendercss"   name="pendrendercss"  value="1">Render Blocking CSS                 </label>    </p>
+<p><label for="pendredirects"  > <input type="checkbox" id="pendredirects"   name="pendredirects"  value="1">Evitar redirecionamento de páginas  </label>    </p>
+<p><label for="pendgzip"       > <input type="checkbox" id="pendgzip"        name="pendgzip"       value="1">Ativar compressão Gzip              </label>    </p>
+<p><label for="pendkeepAlive"  > <input type="checkbox" id="pendkeepAlive"   name="pendkeepAlive"  value="1">Ativar Keep Alive                   </label>    </p>
+<p><label for="pendpreconnect" > <input type="checkbox" id="pendpreconnect"  name="pendpreconnect" value="1">Utilizar Preconnect                 </label>    </p>
+<p><label for="pendcaching"    > <input type="checkbox" id="pendcaching"     name="pendcaching"    value="1">Ativar caching                      </label>    </p>
+<p><label for="pendimagens"    > <input type="checkbox" id="pendimagens"     name="pendimagens"    value="1">Otimizar imagens                    </label>    </p>
+<p><label for="pendimagensdup" > <input type="checkbox" id="pendimagensdup"  name="pendimagensdup" value="1">Remover imagens duplicadas          </label>    </p>
+<p><label for="pendsprites"    > <input type="checkbox" id="pendsprites"     name="pendsprites"    value="1">Combinar imagens em Sprites CSS     </label>    </p>
+<p><label for="pendminicss"    > <input type="checkbox" id="pendminicss"     name="pendminicss"    value="1">Minificar Arquivos CSS              </label>    </p>
+<p><label for="pendminijs"     > <input type="checkbox" id="pendminijs"      name="pendminijs"     value="1">Minificar Arquivos JS               </label>    </p>
+<p><label for="pendminihtml"   > <input type="checkbox" id="pendminihtml"    name="pendminihtml"   value="1">Minificar Arquivos html             </label>    </p>
+<p><label for="pendconteudovis"> <input type="checkbox" id="pendconteudovis" name="pendconteudovis"value="1">Priorizar conteúdo visível          </label>    </p>
+<p><label for="pendlazyScripts"> <input type="checkbox" id="pendlazyScripts" name="pendlazyScripts"value="1">Utilizar lazyScripts                </label>    </p>
+<p><label for="pendcdn"        > <input type="checkbox" id="pendcdn"         name="pendcdn"        value="1">Utilizar CDN                        </label>    </p>
 
 </form>
 
@@ -131,7 +131,7 @@ $usuarios = listarUsuariosFuncoes($conexao, $_SESSION['permissao']);
 <br>
 <div id="mensaje" class="sub100"></div>
 
-<script src="/js/correo.js"></script>
+<script src="js/correo.js"></script>
 <?php
   include_once("footer.php");
  ?>
