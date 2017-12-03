@@ -1,7 +1,6 @@
 html, head, body {
   width: 100%;
   height: 100%;
-  min-height: 100%;
   border: 0;
   margin: 0px;
   padding: 0px;
@@ -10,9 +9,12 @@ html, head, body {
   text-shadow: -1px 0 #000, 0 1px #b8b5b5, 1px 0 #000, 0 -1px #b8b5b5;
   font-family: DejaVu Sans Bold, fantasy;
   font-size: 16px;
-  position: absolute;
-background-color: #19002d;
+  position: relative;
+  background-color: #19002d;
+}
 
+.pointer {
+  cursor: pointer;
 }
 
 #head {
@@ -27,6 +29,41 @@ background-color: #19002d;
   height: 45px;
   position: absolute;
   text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#toggle:checked ~ #tudo {
+    transform: scale(0.70);
+    top: -13%;
+    right: -15%;
+    overflow: visible;
+    border-bottom: : 4px solid #fff;
+}
+
+#tudo {
+  width: 100%;
+  height: calc(100% - 100px);
+  position: absolute;
+  transition: transform 600ms ease-out, top 700ms, right 700ms;
+}
+
+#toggle:checked + #sidebar {
+  left: 0px;
+}
+
+#sidebar {
+  transition: left 700ms;
+  position:fixed;
+  top: 0px;
+  left: -30%;
+  background-color: #000;
+  color: #fff;
+  height: 100%;
+  width: 30%;
+  z-index: 1;
 }
 
 .backgroundEscuro {
@@ -84,7 +121,7 @@ background-color: #19002d;
 }
 
 .formulario {
-  width: 85%;
+  width: 70%;
   min-width: 360px;
   position: relative;
   margin-left: auto;
@@ -348,7 +385,7 @@ background-color: #19002d;
 
 .sucesso {
   color: rgba(255, 255, 255, 0.87);
-  background-color: #48e13c;
+  background-color: #54d16a;
   z-index: 1;
 }
 
@@ -448,6 +485,19 @@ background-color: #19002d;
   font-size: 1.2rem;
 }
 
+.sub50 p label {
+  display: block;
+  position: relative;
+}
+
+.sub50 p label input:checked::before {
+  content: "Checked";
+  color: #54d16a;
+  font-size: 1.3em;
+  position: absolute;
+  left: 35ch;
+}
+
 .sub50 * {
   margin-left: 10px;
   margin-right: 10px;
@@ -457,7 +507,7 @@ background-color: #19002d;
 
 
 .fright {
-  float: right;
+  right: 0px;
 }
 .sub50 h2 {
   text-align: center;
@@ -467,9 +517,8 @@ background-color: #19002d;
 
 
 #conteudo {
-  margin-top: 45px;
   width: 100%;
-  min-height: 70%;
+  height: auto;
 
 }
 
@@ -490,22 +539,20 @@ background-color: #19002d;
   width: auto;
 }
 
-#contenedor > ul {
+#contenedor ul {
   text-decoration: none;
   list-style-type: none;
-  padding: 0px;
-  padding-left: 60px;
+  margin
 }
 
-#contenedor > ul > li {
+#contenedor li {
   text-decoration: none;
-  margin-top: 10px;
+  background-color: #000;
 }
 
-#contenedor >ul > li > a {
+#contenedor li > a {
   text-decoration: none;
   color: #fff;
-  font-size: 1.15rem;
 }
 
 :root {
