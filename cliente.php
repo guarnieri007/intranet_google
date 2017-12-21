@@ -2,6 +2,8 @@
       include_once("bClientes.php");
       include_once("banco_login.php");
       include_once("class/cliente.php");
+	  include_once("banco_adm.php");
+	  include_once("usuario.php");
 
 $id = $_POST['cliente'];
 $pesquisa = pesquisarCliente($conexao, $id);
@@ -10,6 +12,9 @@ $pesquisa = pesquisarCliente($conexao, $id);
 $cliente = new cliente($pesquisa["webmaster_nome"], $pesquisa["webmaster_email"], $pesquisa["webmaster_telefone"], $pesquisa["site"], $pesquisa["agendamento"], $pesquisa["horario_agen"], $pesquisa["cli_mercado"], $pesquisa["cli_ms3"]);
 $cliente->setSales_Rep_Email($pesquisa['sales_rep_email']);
 $cliente->setCliente_Id($id);
+
+$idiomas = buscaIdiomas($conexao);
+
 ?>
 
 <form class="formulario1" action="editar-cliente.php" method="post">
@@ -38,6 +43,17 @@ $cliente->setCliente_Id($id);
   <li><input type="time" name="horario_agen" id="horario" value="<?=$cliente->getHorario_Agen() ?>" placeholder="05:30 AM"></li>
 </ul>
 
+</ul>
+  <ul><li>Idioma:</li>
+  <li>
+  <select name="language" id="language">
+<?php	foreach ($idiomas as $idioma): ?>
+    <option value="<?= $idioma['abreviacao']?>" id="<?= $idioma['abreviacao']?>"><?= $idioma['idioma']?></option>
+<?php endforeach ?>
+  </select>
+  </li>
+</ul>
+
 <ul><li>
   <table class="centralizar tabela1">
     <tr><th>Escolha o tipo do email:</th><th>Eu me chamo:</th></tr>
@@ -56,7 +72,7 @@ $cliente->setCliente_Id($id);
     <?php
 $usuarios = listarUsuariosFuncoes($conexao, $_SESSION['permissao']);
     foreach ($usuarios as $usuario):
-      ?><option value="<?= $usuario['nome'] ?>" id="<?= $usuario['nome'] ?>"><?= $usuario['nome'] ?></option>
+      ?><option value="<?= $usuario['nome'] ?>" <?php if ($usuario['id_usuario'] == $_SESSION["id_usuario"]) {echo "selected";} ?> id="<?= $usuario['nome'] ?>"><?= $usuario['nome'] ?></option>
    <?php endforeach; ?>
     <!--
     <option value="Felipe Guarnieri" id="Felipe">Felipe Guarnieri</option>
