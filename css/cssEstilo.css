@@ -411,18 +411,39 @@ html, head, body {
 
 .table1 {
   border: 3px solid #000;
-  width: 100%;
+  width: 96%;
   font-size: 0.9em;
   background-color: #580073;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .table1 th {
-  max-width: 14%;
   background-color: #000;
   border-left: 2px #000 solid;
   border-right: 2px #000 solid;
   color: #e4d19e;
   text-shadow: none;
+}
+
+.table1 th:nth-child(1) {
+  width: 10%;
+}
+
+.table1 th:nth-child(2) {
+  width: 30%;
+}
+
+.table1 th:nth-child(3) {
+  width: 7%;
+}
+
+.table1 th:nth-child(4) {
+  width: 5%;
+}
+
+.table1 th:nth-child(5) {
+  width: 13%;
 }
 
 .table1 tr:nth-child(even){
@@ -445,12 +466,13 @@ html, head, body {
 	text-shadow: 1px 1px 1px #000, -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000;
 	position: relative;
 }
-
-
-
-
 .table1 tr {
-  height: 3.5rem;
+  height: 6rem;
+
+}
+
+.table1 tr:nth-child(1) {
+  height: 2.5rem;
 }
 
 .sub100 {
