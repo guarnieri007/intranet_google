@@ -63,3 +63,8 @@ function removerIdioma($conexao, $id_idioma) {
   $resultado = mysqli_query($conexao, $query);
   return $resultado;
 }
+
+function updateDatabase($conexao, $update) {
+  $resultado = mysqli_query($conexao, $update);
+  return $resultado;
+}

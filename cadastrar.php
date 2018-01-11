@@ -10,7 +10,7 @@ if ((!$_SESSION['usuario_logado']) == NULL) {
   <div class="fomulario"><div class="classe1">Data da reunião: </div><div class="classe2"><input type="date" id="fecha" name="agendamento"></div></div>
   <div class="fomulario"><div class="classe1">Horário: </div><div class="classe2"><input type="time" id="horario" name="horario_agen"></div></div>
   <div class="fomulario"><div class="classe1">email do sales rep: </div><div class="classe2"><input type="text" id="correoAlguien" name="sales_rep_email"></div></div>
-  <input type="text" name="mercado" value=""><input type="hidden" name="ms3"value="<?= $_SESSION['id_usuario'] ?>">
+  <input type="hidden" name="mercado" value=""><input type="hidden" name="ms3"value="<?= $_SESSION['id_usuario'] ?>">
   <p><input type="submit" value="Salvar"></p>
 </form>
 

@@ -12,10 +12,17 @@ function listarClientes($conexao) {
   return $clientes;
 }
 
-function listarMeusClientes($conexao, $me) {
+function listarMeusClientes($conexao, $me, $inicial, $final) {
   $clientes = array();
   $eu = $me;
-  $query = "SELECT * FROM clientes WHERE cli_ms3 = {$eu}";
+  $inicial = $inicial;
+  $final = $final;
+  if ($inicial !== NULL AND $final !== NULL) {
+    $query = "SELECT * FROM clientes WHERE cli_ms3 = {$eu} AND agendamento Between '{$inicial}' AND '{$final}'";
+  }else {
+    $query = "SELECT * FROM clientes WHERE cli_ms3 = {$eu}";
+  }
+
   $resultado = mysqli_query($conexao, $query);
   while($cliente = mysqli_fetch_assoc($resultado)) {
 

@@ -16,7 +16,7 @@ if (opcoes) {
 }
 
 function generarCorreo() {
-	
+
 	var idioma=document.querySelector("#language").value;
 	console.log(idioma);
 	if (idioma == "ES") {
@@ -51,7 +51,7 @@ function generarCorreo() {
 	var pendrenderjs    ="Evitar el bloqueo de JavaScript";
 	var pendrendercss   ="Evitar el bloqueo de CSS";
 	var pendredirects   ="Quitar redirecionamentos";
-    var pendgzip        ="Activar compressión con Gzip";
+    var pendgzip        ="Activar compresión con Gzip";
     var pendkeepAlive   ="Activar Keep Alive";
     var pendpreconnect  ="Utilizar preConnect";
     var pendcaching     ="Activar cache y especificar el tiempo de expiración";
@@ -199,7 +199,7 @@ function generarCorreo() {
 	}
 }/*fim do if espanhol*/
 
-else if (idioma == "PT-br" || idioma == "PT-br") {
+else if (idioma == "PT" || idioma == "PT-br") {
 	var tratados=[];
 	var pendentes=[];
 	var algoPendente = 0;
@@ -389,11 +389,11 @@ function diaDeLaSemana(date, idioma) {
   }if (idioma == "PT-br" || idioma=="PT") {
   return isNaN(dayOfWeek) ? null : ['segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sabado', 'domingo'][dayOfWeek];
   }
-  
+
 }
 
 function mesEscrito(date, idioma) {
-	
+
   var dayOfWeek = new Date(date).getMonth();
   if (idioma == "ES") {
   return isNaN(dayOfWeek) ? null : ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'][dayOfWeek];
@@ -401,7 +401,7 @@ function mesEscrito(date, idioma) {
   if (idioma == "PT-br" || idioma == "PT") {
   return isNaN(dayOfWeek) ? null : ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'][dayOfWeek];
   }
-  
+
 }
 
 if (document.getElementById("generar") !== null) {

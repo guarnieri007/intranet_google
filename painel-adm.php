@@ -13,6 +13,7 @@ if (ehAdm()) {
     <li><a href="painel-adm-idiomas.php">Idiomas</a></li>
     <li><a href="painel-adm-paises.php">Países</a></li>
     <li><a href="painel-adm-equipes.php">Equipes</a></li>
+    <li><a href="painel-adm-updates.php">Updates database</a></li>
   </ul>
 
 <?php

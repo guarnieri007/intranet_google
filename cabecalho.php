@@ -31,7 +31,7 @@ include_once("banco_login.php");
           <?php if (quem_esta_logado()) { ?>
             <li><a href="deslogar.php">Logout <?= temApelido() ?></a></li>
             <li><a href="cadastrar.php">Cadastrar Cliente</a></li>
-            <li><a href="consultar.php">Consultar Cliente</a></li>
+            <li><a href="consultar-urli.php">Consultar Cliente</a></li>
 
         <?php  }
         if (ehAdm()) { ?>
