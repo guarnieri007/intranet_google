@@ -3,7 +3,7 @@
       include_once("banco_login.php");
       include_once("class/cliente.php");
 	  include_once("banco_adm.php");
-	  include_once("usuario.php");
+	  include_once("class/usuario.php");
 
 $id = $_POST['cliente'];
 $pesquisa = pesquisarCliente($conexao, $id);
